@@ -1,0 +1,34 @@
+POST http://localhost:3001/api/events
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjYzNWUwYzI3MmU2ZjFmNTY4Y2MwOSIsInJvbGUiOiJhZG1pbmlzdHJhdGV1ciIsImlhdCI6MTc2MDk2NjExMiwiZXhwIjoxNzYxNTcwOTEyfQ.o1G6SsxFs-STklbyYlbBg-8D5X_-KgUKbPYxK3dnzXE
+
+{
+  "name": "conference ia 2025",
+  "type": "Compétition",
+  "startDate": "2025-12-01",
+  "endDate": "2025-11-03",
+  "time": "09:00",
+  "city": "Paris",
+  "description": "Compétition de codage pour étudiants",
+  "price": 0,
+  "qrOption": true,
+  "category": "68f4de331d181f427171ad16"
+}
+
+
+{
+  "name": "conference ia 2025",
+  "type": "Compétition",
+  "startDate": "2025-12-01T00:00:00.000Z",
+  "endDate": "2025-11-03T00:00:00.000Z",
+  "time": "09:00",
+  "city": "Paris",
+  "description": "Compétition de codage pour étudiants",
+  "price": 0,
+  "imageUrl": null,
+  "organizer": "68f635e0c272e6f1f568cc09",
+  "category": "68f4de331d181f427171ad16",
+  "qrOption": true,
+  "participants": [],
+  "id": "68f63909c272e6f1f568cc0d"
+}

@@ -1,0 +1,30 @@
+POST http://localhost:3001/api/events/68f24a11b8df2f1fafe1dd57/Participants
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjIyNmEzNDI3NDg4YzQxMmUwYTVlZSIsInJvbGUiOiJhZG1pbmlzdHJhdGV1ciIsImlhdCI6MTc2MDg3Nzg0OSwiZXhwIjoxNzYxNDgyNjQ5fQ.blsNHEg7BOsFVa1C04TXjC52ZnDYMc8rHW9EZWs9nuQ
+
+{
+  "participantId": "68f4e8a67607df26eb07a305"
+
+}
+
+###
+POST http://localhost:3001/api/events/68f24a11b8df2f1fafe1dd57/validate-qr-full
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjIyNmEzNDI3NDg4YzQxMmUwYTVlZSIsInJvbGUiOiJhZG1pbmlzdHJhdGV1ciIsImlhdCI6MTc2MDg3Nzg0OSwiZXhwIjoxNzYxNDgyNjQ5fQ.blsNHEg7BOsFVa1C04TXjC52ZnDYMc8rHW9EZWs9nuQ
+
+{
+  "eventName": "Hackathon 2025",
+  "participantEmail": "dupontt@gmail.com"
+}
+
+###
+POST http://localhost:3001/api/events/68f24a11b8df2f1fafe1dd57/register
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjIyNmEzNDI3NDg4YzQxMmUwYTVlZSIsInJvbGUiOiJhZG1pbmlzdHJhdGV1ciIsImlhdCI6MTc2MDg3Nzg0OSwiZXhwIjoxNzYxNDgyNjQ5fQ.blsNHEg7BOsFVa1C04TXjC52ZnDYMc8rHW9EZWs9nuQ
+
+{
+  "nom": "Johnnn",
+  "email": "john.doe@exam.com",
+  "profession": "Étudiant",
+  "don": true
+}

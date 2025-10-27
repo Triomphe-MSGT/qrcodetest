@@ -1,0 +1,36 @@
+POST http://localhost:3001/api/categories
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjIyNmEzNDI3NDg4YzQxMmUwYTVlZSIsInJvbGUiOiJhZG1pbmlzdHJhdGV1ciIsImlhdCI6MTc2MDg3Nzg0OSwiZXhwIjoxNzYxNDgyNjQ5fQ.blsNHEg7BOsFVa1C04TXjC52ZnDYMc8rHW9EZWs9nuQ
+
+
+{
+  "name": "Conférence",
+  "emoji": "🎤",
+  "description": "Événements liés à des conférences et présentations"
+}
+
+###
+POST http://localhost:3001/api/events
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjIyNmEzNDI3NDg4YzQxMmUwYTVlZSIsInJvbGUiOiJhZG1pbmlzdHJhdGV1ciIsImlhdCI6MTc2MDg3Nzg0OSwiZXhwIjoxNzYxNDgyNjQ5fQ.blsNHEg7BOsFVa1C04TXjC52ZnDYMc8rHW9EZWs9nuQ
+
+{
+  "name": "conference ia 2025",
+  "type": "Compétition",
+  "startDate": "2025-11-01",
+  "endDate": "2025-11-03",
+  "time": "09:00",
+  "city": "Paris",
+  "description": "Compétition de codage pour étudiants",
+  "price": 0,
+  "qrOption": true,
+  "category": "68f4de331d181f427171ad16"
+}
+
+
+###
+GET  http://localhost:3001/api/categories
+
+###
+GET http://localhost:3000/api/categories
+

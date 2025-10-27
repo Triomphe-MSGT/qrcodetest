@@ -1,0 +1,58 @@
+# === TEST API VALIDATION QR CODE ===
+@baseUrl = http://localhost:3001/api
+@organizerToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjYzNWUwYzI3MmU2ZjFmNTY4Y2MwOSIsInJvbGUiOiJhZG1pbmlzdHJhdGV1ciIsImlhdCI6MTc2MDk2NjExMiwiZXhwIjoxNzYxNTcwOTEyfQ.o1G6SsxFs-STklbyYlbBg-8D5X_-KgUKbPYxK3dnzXE
+@participantToken = <TON_TOKEN_PARTICIPANT>
+@eventName = conference ia 2025
+@wrongEventName = conference ia 2025
+@validQrToken = <TON_TOKEN_QR_VALIDE>
+@invalidQrToken = token_inexistant_12345
+
+### ✅ SCÉNARIO 1 : Validation réussie
+POST {{baseUrl}}/events/validate-qr
+Authorization: Bearer {{organizerToken}}
+Content-Type: application/json
+
+{
+  "qrCodeToken": "{{validQrToken}}",
+  "eventName": "{{eventName}}"
+}
+
+### ⚠️ SCÉNARIO 2 : QR déjà utilisé
+POST {{baseUrl}}/events/validate-qr
+Authorization: Bearer {{organizerToken}}
+Content-Type: application/json
+
+{
+  "qrCodeToken": "{{validQrToken}}",
+  "eventName": "{{eventName}}"
+}
+
+### ❌ SCÉNARIO 3 : QR invalide
+POST {{baseUrl}}/events/validate-qr
+Authorization: Bearer {{organizerToken}}
+Content-Type: application/json
+
+{
+  "qrCodeToken": "{{invalidQrToken}}",
+  "eventName": "{{eventName}}"
+}
+
+### 🚫 SCÉNARIO 4 : Mauvais événement
+POST {{baseUrl}}/events/validate-qr
+Authorization: Bearer {{organizerToken}}
+Content-Type: application/json
+
+{
+  "qrCodeToken": "{{validQrToken}}",
+  "eventName": "{{wrongEventName}}"
+}
+
+### 🔒 SCÉNARIO 5 : Utilisateur non autorisé
+POST {{baseUrl}}/events/validate-qr
+Authorization: Bearer {{participantToken}}
+Content-Type: application/json
+
+{
+  "qrCodeToken": "{{validQrToken}}",
+  "eventName": "{{eventName}}"
+}

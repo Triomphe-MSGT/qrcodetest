@@ -1,0 +1,67 @@
+
+POST http://localhost:3001/api/auth/register
+Content-Type: application/json
+
+{
+  "nom": "admin",
+  "email": "admin@gmail.com",
+  "password": "admin123",
+  "sexe": "Homme",
+  "role": "administrateur"
+}
+
+###
+
+POST http://localhost:3001/api/users/login
+Content-Type: application/json
+
+{
+   "email": "eri@gmail.com",
+  "password": "password123"
+}
+
+###
+POST http://localhost:3001/api/users/register
+Content-Type: application/json
+
+{
+  "nom": "triomphe",
+  "email": "triomph@gmail.com",
+  "password": "password123",
+  "sexe": "Homme",
+  "role": "administrateur"
+}
+
+###
+POST http://localhost:3001/api/users/login
+Content-Type: application/json
+
+{
+  "email": "triomph@gmail.com",
+  "password": "password123"
+}
+
+###
+GET http://localhost:3001/api/events
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjIyNmEzNDI3NDg4YzQxMmUwYTVlZSIsInJvbGUiOiJhZG1pbmlzdHJhdGV1ciIsImlhdCI6MTc2MDg3Nzg0OSwiZXhwIjoxNzYxNDgyNjQ5fQ.blsNHEg7BOsFVa1C04TXjC52ZnDYMc8rHW9EZWs9nuQ
+
+###
+
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjIyNmEzNDI3NDg4YzQxMmUwYTVlZSIsInJvbGUiOiJhZG1pbmlzdHJhdGV1ciIsImlhdCI6MTc2MDg3Nzg0OSwiZXhwIjoxNzYxNDgyNjQ5fQ.blsNHEg7BOsFVa1C04TXjC52ZnDYMc8rHW9EZWs9nuQ
+GET  http://localhost:3001/api/categories
+
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "name": "Technologie",
+  "emoji": "💻",
+  "description": "Événements liés au monde de la tech, du code et de l'innovation."
+}
+
+@categoryId = {{% response.body.id %}}
+
+
+
+
+
