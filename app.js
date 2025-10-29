@@ -37,22 +37,14 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/users", usersRouter);
 app.use("/api/events", eventsRouter);
 app.use("/api/categories", categoriesRouter);
-app.use("/api/auth", authRouter); // Utilisation de la variable importée
+app.use("/api/auth", authRouter);
 app.use("/api/dashboard", dashboardRouter);
 
-// 3. Servir les fichiers statiques du build React (Vite)
-// (Vient APRÈS les routes API pour que /api/... ait la priorité)
 app.use(express.static(path.join(__dirname, "dist")));
 
-// 4. Route "catch-all" pour le routage côté client (React Router)
-// Cette route doit être la DERNIÈRE route GET.
-// Elle renvoie votre index.html pour n'importe quelle autre requête
-// (ex: /home, /profile, /events/123) pour que React Router prenne le relais.
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
-
-// --- FIN de la configuration de déploiement ---
 
 // Les middlewares de fin (gestion des erreurs)
 app.use(middleware.unknownEndpoint);
