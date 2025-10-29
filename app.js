@@ -41,10 +41,10 @@ app.use("/api/categories", categoriesRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/dashboard", dashboardRouter);
 
-app.use(express.static(path.join(__dirname, "dist")));
+app.use(express.static(path.join(__dirname, "..", "frontend", "dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "frontend", "dist", "index.html"));
 });
 
 // Les middlewares de fin (gestion des erreurs)
