@@ -25,6 +25,7 @@ mongoose
 
 // --- Middlewares de base ---
 app.use(cors());
+app.use(express.static("dist"));
 app.use(express.json());
 
 // --- Configuration pour servir le Frontend et le Backend ensemble ---
