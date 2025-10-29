@@ -43,6 +43,10 @@ app.use("/api/dashboard", dashboardRouter);
 
 app.use(express.static(path.join(__dirname, "dist")));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 // Les middlewares de fin (gestion des erreurs)
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
